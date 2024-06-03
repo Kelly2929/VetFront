@@ -9,7 +9,7 @@ export function useVideoChatContext() {
   return useContext(SocketContext);
 }
 
-const socket = io("http://localhost:8080");
+const socket = io("https://vetbackend-r2gs.onrender.com");
 const VideoChatProvider = ({ children }) => {
   const { currentUser, currentUserToken } = useAuth();
 

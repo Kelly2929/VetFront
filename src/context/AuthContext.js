@@ -15,7 +15,7 @@ export function AuthProvider({ children }) {
   async function login(email, password) {
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/users/signin",
+        "https://vetbackend-r2gs.onrender.com/api/users/signin",
         { email, password }
       );
 
@@ -48,7 +48,7 @@ export function AuthProvider({ children }) {
   async function register(emailParam, password, nameParam, isVetParam) {
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/users/signup",
+        "https://vetbackend-r2gs.onrender.com/api/users/signup",
         { email:emailParam, password, name:nameParam, isVet:isVetParam }
       );
   
@@ -83,7 +83,7 @@ export function AuthProvider({ children }) {
     if (token) {
       axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
       try {
-        const response = await axios.get("http://localhost:8080/api/users/me");
+        const response = await axios.get("https://vetbackend-r2gs.onrender.com/api/users/me");
 
         setCurrentUserToken(response.data.token);
         setCurrentUser(response.data.user);
